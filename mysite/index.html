@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(90deg, #ff080, #00c6ff);
+            background-size: 400% 400%;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+    </style>
+    <style>
+        body {
+            margin: 0;
+            height:100vh;
+            background: linear-gradient(270deg, #ff0080, #7928ca, #00c6ff, #00ff99) ;
+            background-size: 800% 800%;
+            animation: gradient 10s ease infinite ;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: #111;
+            color: bisque;
+            font-family: Arial;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radios: 10px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>мой сайт</title>
+</head>
+<body>
+<h1>типа вау круто</h1>
+<h1>хихихихи це персик, де?</h1>
+<p>блеблебле</p>
+<button onclick="alert('ты пепса')">кликни ка сюда</button>
+<script>
+    const body = document.body;
+
+    function updateBackground(x, y) {
+        const r = Math.round((x / window.innerWidth) * 255);
+        const g = Math.round((y / window.innerHeight)* 255);
+        const b = 150;
+        body.style.background = `rgb(${r}, ${g}, ${b}`;
+    }
+    // Для мыши
+    window.addEventListener('mousemove', (e) => {
+        updateBackground(e.clientX, e.clientY);
+    });
+
+    // Для сенсорного экрана
+    window.addEventListener('touchmove', (e) => {
+        const touch = e.touches[0];
+        updateBackground(touch.clientX, touch.clientY);
+    })
+</script>
+</body>
+</html>
